@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<canvas id="canvas" width="1024" height="768" style="border: 1px solid #aaa; display: block; margin: auto auto">
+		<!--兼容降错-->
+		当前浏览器不支持 Canvas，请更换浏览器后再试
+	</canvas>
+
+	<!--三角形-->
+	<script>
+		window.onload = function () {
+			// 直线
+			const canvas = document.getElementById('canvas')
+			const context = canvas.getContext('2d')
+
+			context.moveTo(100, 100)	// 笔尖移动
+			context.lineTo(700, 700)	// 画笔移动到这点
+			context.lineTo(100, 700)	// 画笔移动到这点
+			context.lineTo(100, 100)	// 画笔移动到这点
+
+			// 常用属性
+			// 笔线
+			context.lineWidth = 5	// 线粗
+			context.strokeStyle = '#005588'	// 线颜色
+			// 填充
+			context.fillStyle = 'rgb(2, 100, 30)'	// 填充颜色
+			context.fill()	// 填充
+
+			context.stroke()	// 开始绘制
+		}
+	</script>
+</body>
+</html>

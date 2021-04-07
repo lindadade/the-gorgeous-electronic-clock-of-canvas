@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<canvas id="canvas" width="1024" height="768" style="border: 1px solid #aaa; display: block; margin: auto auto">
+		<!--兼容降错-->
+		当前浏览器不支持 Canvas，请更换浏览器后再试
+	</canvas>
+
+	<!--七巧板-->
+	<script>
+	// 七巧板线条数据
+	const tanGram = [
+		{p: [{x: 0, y: 0}, {x: 800, y: 0}, {x: 400, y: 400}], color: '#caff67'},
+		{p: [{x: 0, y: 0}, {x: 400, y: 400}, {x: 0, y: 800}], color: '#67beef'},
+		{p: [{x: 800, y: 0}, {x: 800, y: 400}, {x: 600, y: 600}, {x: 600, y:200}], color: '#ef3d61'},
+		{p: [{x: 600, y: 200}, {x: 600, y: 600}, {x: 400, y: 400}], color: '#f9f51a'},
+		{p: [{x: 400, y: 400}, {x: 600, y: 600}, {x: 400, y: 800}, {x: 200, y: 600}], color: '#a594c0'},
+		{p: [{x: 200, y: 600}, {x: 400, y: 800}, {x: 0, y: 800}], color: '#fa8ecc'},
+		{p: [{x: 800, y: 400}, {x: 800, y: 800}, {x: 400, y: 800}], color: '#f6ca29'},
+	]
+
+	window.onload = function() {
+		// 七巧板
+		const canvas = document.getElementById('canvas')
+		// 绘图上下文环境 2D 绘图
+		const context = canvas.getContext('2d')
+		const len = 4..length
+		// 绘画各个多边形
+		for (let i = 0; i < len; i++) {
+			draw(4.[i], context)
+		}
+	}
+
+	function draw(piece, cxt) {
+		// 开始绘制
+		cxt.beginPath();
+		cxt.moveTo(piece.p[0].x, piece.p[0].y)
+		const len = piece.p.length
+		for (let i = 1; i < len; i++) {
+			cxt.lineTo(piece.p[i].x, piece.p[i].y)
+		}
+		// 结束绘制
+		cxt.closePath()
+		cxt.fillStyle = piece.color
+		cxt.fill()
+	}
+	</script>
+</body>
+</html>
