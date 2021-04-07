@@ -8,6 +8,10 @@
 >
 > [github仓库](https://github.com/lindadade/the-gorgeous-electronic-clock-of-canvas)
 
+
+
+![canvas](./canvas.gif)
+
 **跟随 [imooc 系列课程 ](https://www.imooc.com/video/2493)学习总结，如果有不清楚的地方，也建议跟我一样从零观看学习喔**
 
 # Canvas 基础
